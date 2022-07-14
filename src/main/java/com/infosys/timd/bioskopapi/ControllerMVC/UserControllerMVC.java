@@ -91,6 +91,6 @@ public class UserControllerMVC {
         }else {
             List<User> list = userServiceImplements.getAll();
             model.addAttribute("list", list);}
-        return "/usersPage";
+        return "usersPage";
     }
 }
