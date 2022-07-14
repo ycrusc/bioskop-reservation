@@ -71,7 +71,7 @@
     <div class="pt-2 d-flex flex-column gap-5">
         <div class="menu p-0">
             <p>Daily Use</p>
-            <a th:href="@{/users}" class="item-menu active">
+            <a th:href="@{/usersPage}" class="item-menu active">
                 <i class="icon ic-stats"></i>
                 User
             </a>
@@ -166,14 +166,14 @@
         </header>
         <div class="information d-flex flex-column gap-5">
             <div class="row px-1 mb-2 gap-5">
-<!--               start card-->
+                <!--               start card-->
                 <div class="col-xl-4 col-12 card debit">
                     <p class="number">Add User</p>
                     <div class="buttons">
                         <a th:href="@{/newUserForm}">
-                        <button class="blob-btn">
-                            Add User
-                            <span class="blob-btn__inner">
+                            <button class="blob-btn">
+                                Add User
+                                <span class="blob-btn__inner">
                           <span class="blob-btn__blobs">
                             <span class="blob-btn__blob"></span>
                             <span class="blob-btn__blob"></span>
@@ -181,7 +181,7 @@
                             <span class="blob-btn__blob"></span>
                           </span>
                         </span>
-                        </button>
+                            </button>
                         </a>
                         <br/>
 
@@ -196,22 +196,22 @@
                         </svg>
                     </div>
                 </div>
-<!--                end card-->
-<!--                start total user-->
+                <!--                end card-->
+                <!--                start total user-->
                 <div class="col-xl-4 col-12 card balance">
                     <h2>Total Users</h2>
                     <ion-icon name="person-outline" size="large"></ion-icon>
                     <h2>[[${totalItems}]]</h2>
                 </div>
-<!--                end total user-->
-<!--                start chart-->
+                <!--                end total user-->
+                <!--                start chart-->
                 <div class="col-xl-4 col-12 card donut-chart m-lg-0 p-2">
                     <div>
                         <canvas id="chart-budget" style="height: 226px; width: 100%">
                         </canvas>
                     </div>
                 </div>
-<!--                end chart-->
+                <!--                end chart-->
             </div>
 
             <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
@@ -230,26 +230,26 @@
 
                         <tbody>
                         <th:block th:each="user : ${listUsers}">
-                        <tr>
-                            <td class="action-header"> [[${user.userId}]] </td>
-                            <td class="action-header"> [[${user.username}]] </td>
-                            <td> [[${user.emailId}]] </td>
-                            <td> [[${user.password}]] </td>
-                            <td>
-                                <a type="button" class="btn btn-success" th:href="@{/showFormForUpdate/{usersId}(usersId=${user.userId})}">Edit</a>
-                                <a type="button" class="btn btn-danger" style="margin-left:5px" th:href="@{/delete/{usersId}(usersId=${user.userId})}">Delete</a>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td class="action-header"> [[${user.userId}]] </td>
+                                <td class="action-header"> [[${user.username}]] </td>
+                                <td> [[${user.emailId}]] </td>
+                                <td> [[${user.password}]] </td>
+                                <td>
+                                    <a type="button" class="btn btn-success" th:href="@{/showFormForUpdate/{usersId}(usersId=${user.userId})}">Edit</a>
+                                    <a type="button" class="btn btn-danger" style="margin-left:5px" th:href="@{/delete/{usersId}(usersId=${user.userId})}">Delete</a>
+                                </td>
+                            </tr>
                         </th:block>
                         </tbody>
                     </table>
 
-<!--                    Start Pagination-->
+                    <!--                    Start Pagination-->
                     <div th:if ="${totalPages > 1}">
                         <div class="row col-sm-10">
-<!--                            <div class="col-sm-2">-->
-<!--                                <span>Total Rows: [[${totalItems}]]</span>-->
-<!--                            </div>-->
+                            <!--                            <div class="col-sm-2">-->
+                            <!--                                <span>Total Rows: [[${totalItems}]]</span>-->
+                            <!--                            </div>-->
                             <div class="col-sm-2">
                     <span th:each ="i: ${#numbers.sequence(1, totalPages)}">
                         <a th:if="${currentPage != i}" th:href="@{'/page/' + ${i}}">[[${i}]]</a>
@@ -266,7 +266,7 @@
                             </div>
                         </div>
                     </div>
-<!--                    End Pagination-->
+                    <!--                    End Pagination-->
                 </div>
                 <!--            Enf of Table-->
             </div>
